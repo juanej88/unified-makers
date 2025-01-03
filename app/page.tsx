@@ -1,7 +1,9 @@
-import Image from 'next/image';
+import Header from '@/app/components/Header';
 
 export default function Home() {
   return (
-    <h1 className='h-screen w-screen text-4xl flex justify-center items-center'>Unified Makers</h1>
+    <>
+      <Header />
+    </>
   );
-}
+};
