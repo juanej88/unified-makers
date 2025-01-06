@@ -1,9 +1,11 @@
 import Logo from '@/app/ui/Logo';
+import LocationButton from '@/app/ui/LocationButton';
 
 function Header() {
   return (
-    <header className='w-full max-w-screen-2xl h-12 flex items-center px-4'>
+    <header className='w-full max-w-screen-2xl h-12 grid grid-cols-3 px-4 shadow'>
       <Logo />
+      <LocationButton />
     </header>
   );
 };
