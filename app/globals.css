@@ -12,7 +12,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --secondary: hsl(0, 0%, 70%);
+    --secondary: hsla(0, 0%, 70%, 100%);
   }
 }
 

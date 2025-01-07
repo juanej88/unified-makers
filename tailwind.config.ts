@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         secondary: "var(--secondary)",
+        blue: "hsl(200, 95%, 60%)",
       },
     },
   },
