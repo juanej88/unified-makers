@@ -26,4 +26,8 @@ body {
   .flex-center {
     @apply flex justify-center items-center;
   }
+
+  .primary-btn {
+    @apply flex-center text-secondary rounded-full hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
+  }
 }
