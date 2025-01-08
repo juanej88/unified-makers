@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --body-background: hsl(0, 0%, 95%);
   --secondary: hsl(0, 0%, 34%);
 }
 
@@ -12,14 +13,16 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --body-background: hsl(0, 0%, 10%);
     --secondary: hsla(0, 0%, 70%, 100%);
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--body-background);
   font-family: Arial, Helvetica, sans-serif;
+  scrollbar-width: thin;
 }
 
 @layer components {
@@ -28,6 +31,16 @@ body {
   }
 
   .primary-btn {
-    @apply flex-center text-secondary rounded-full hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
+    @apply rounded hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
+  }
+
+  .grid-location-option {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5rem);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
   }
 }
