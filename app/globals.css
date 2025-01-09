@@ -31,7 +31,7 @@ body {
   }
 
   .primary-btn {
-    @apply rounded hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
+    @apply rounded-md hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
   }
 
   .grid-location-option {

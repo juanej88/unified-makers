@@ -2,41 +2,10 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
+import { getLocationsData } from '../lib/staticData';
 
 function LocationMenu() {
   const [citySelected, setCitySelected] = useState('Brisbane');
-
-  const locationOptions = [
-    {
-      name: 'New South Wales',
-      cities: [
-        'Newcastle',
-        'Sydney',
-        'Wollongong',
-      ]
-    },
-    {
-      name: 'Queensland',
-      cities: [
-        'Brisbane',
-        'Gold Coast',
-      ]
-    },
-    {
-      name: 'Tasmania',
-      cities: [
-        'Launceston',
-        'Hobart',
-      ]
-    },
-    {
-      name: 'Western Australia',
-      cities: [
-        'Perth',
-        'Margaret River',
-      ]
-    },
-  ];
 
   const getCities = (cities: string[]) => {
     return cities.map(city => {
@@ -50,7 +19,8 @@ function LocationMenu() {
   };
   
   const getLocations = () => {
-    return locationOptions.map(state => {
+    const locations = getLocationsData();
+    return locations.map(state => {
       return (
         <aside key={state.name}>
           <h2 className='flex items-center h-8 pl-2 font-medium cursor-default'>{state.name}</h2>
@@ -62,7 +32,7 @@ function LocationMenu() {
   
   return (
     <section className='fixed left-0 top-12 w-full h-full flex justify-center'>
-      <article className='mt-4 p-1 w-full max-w-72 h-full max-h-96 bg-background rounded shadow overflow-auto scrollbar-thin'>
+      <article className='mt-4 p-1 w-full max-w-72 h-full max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin'>
         {getLocations()}
       </article>
     </section>
