@@ -8,16 +8,12 @@ class State {
 }
 
 export const getLocationsData = (): State[] => {
-  const nsw = ['Newcastle', 'Sydney', 'Wollongong'];
-  const qld = ['Brisbane', 'Gold Coast'];
-  const tas = ['Launceston', 'Hobart'];
-  const wa = ['Perth', 'Margaret River'];
-
   const states: [string, string[]][] = [
-    ['New South Wales', nsw],
-    ['Queensland', qld],
-    ['Tasmania', tas],
-    ['Western Australia', wa],
+    ['New South Wales', ['Sydney']],
+    ['Queensland', ['Brisbane']],
+    ['South Australia', ['Adelaide']],
+    ['Victoria', ['Melbourne']],
+    ['Western Australia', ['Perth']],
   ];
 
   return states.map(state => new State(state[0], state[1]));

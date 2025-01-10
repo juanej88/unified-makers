@@ -2,15 +2,19 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
-import { getLocationsData } from '../lib/staticData';
+import { getLocationsData } from '@/app/lib/staticData';
 
 function LocationMenu() {
-  const [citySelected, setCitySelected] = useState('Brisbane');
+  const [citySelected, setCitySelected] = useState('');
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setCitySelected(event.currentTarget.id);
+  };
 
   const getCities = (cities: string[]) => {
     return cities.map(city => {
       return (
-        <button key={city} className='w-full grid grid-location-option items-center justify-items-start h-8 primary-btn text-secondary'>
+        <button key={city} id={city} onClick={handleClick} className='w-full grid grid-location-option items-center justify-items-start h-8 primary-btn text-secondary'>
           <p className='pl-6'>{city}</p>
           {citySelected === city && <Check size={16} />}
         </button>
@@ -32,7 +36,7 @@ function LocationMenu() {
   
   return (
     <section className='fixed left-0 top-12 w-full h-full flex justify-center'>
-      <article className='mt-4 p-1 w-full max-w-72 h-full max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin'>
+      <article className='mt-4 p-1 w-full max-w-72 h-fit max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin'>
         {getLocations()}
       </article>
     </section>
