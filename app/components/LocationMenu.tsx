@@ -1,14 +1,19 @@
 'use client';
 
-import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { getLocationsData } from '@/app/lib/staticData';
+import { useCity, useCityDispatch } from '@/app/providers/cityProvider';
 
 function LocationMenu() {
-  const [citySelected, setCitySelected] = useState('');
+  const selectedCity = useCity();
+  const dispatchCity = useCityDispatch();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setCitySelected(event.currentTarget.id);
+    if(dispatchCity === null) return;
+    dispatchCity({
+      type: 'changed',
+      city: event.currentTarget.id,
+    });
   };
 
   const getCities = (cities: string[]) => {
@@ -16,7 +21,7 @@ function LocationMenu() {
       return (
         <button key={city} id={city} onClick={handleClick} className='w-full grid grid-location-option items-center justify-items-start h-8 primary-btn text-secondary'>
           <p className='pl-6'>{city}</p>
-          {citySelected === city && <Check size={16} />}
+          {selectedCity === city && <Check size={16} />}
         </button>
       );
     });
