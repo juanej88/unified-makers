@@ -14,6 +14,15 @@ export default {
         secondary: "var(--secondary)",
         blue: "hsl(200, 95%, 60%)",
       },
+      keyframes: {
+        scaleUp: {
+          '0%': { transform: 'scale(0.95)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        scaleUp: 'scaleUp 0.1s forwards'
+      }
     },
   },
   plugins: [],

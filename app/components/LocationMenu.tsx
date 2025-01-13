@@ -3,10 +3,24 @@
 import { Check } from 'lucide-react';
 import { getLocationsData } from '@/app/lib/staticData';
 import { useCity, useCityDispatch } from '@/app/providers/cityProvider';
+import { useEffect } from 'react';
 
-function LocationMenu() {
+function LocationMenu({ toggleLocationMenu }: { toggleLocationMenu: () => void }) {
   const selectedCity = useCity();
   const dispatchCity = useCityDispatch();
+
+  // it closes the LocationMenu when the user clicks outside the menu
+  useEffect(() => {
+    const checkClick = (event: MouseEvent) => {
+      const clickedElement = event.target as HTMLElement;
+      const parentElement = clickedElement.closest('#location-menu');
+      if (!parentElement) toggleLocationMenu();
+    };
+    document.addEventListener('click', checkClick);
+    return () => {
+      document.removeEventListener('click', checkClick);
+    };
+  }, []);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if(dispatchCity === null) return;
@@ -14,6 +28,7 @@ function LocationMenu() {
       type: 'changed',
       city: event.currentTarget.id,
     });
+    toggleLocationMenu();
   };
 
   const getCities = (cities: string[]) => {
@@ -41,7 +56,7 @@ function LocationMenu() {
   
   return (
     <section className='fixed left-0 top-12 w-full h-full flex justify-center'>
-      <article className='mt-4 p-1 w-full max-w-72 h-fit max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin'>
+      <article id='location-menu' className='mt-4 p-1 w-full max-w-72 h-fit max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin transition-transform animate-scaleUp origin-top'>
         {getLocations()}
       </article>
     </section>
