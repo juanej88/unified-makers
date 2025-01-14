@@ -4,6 +4,7 @@ import Logo from '@/app/ui/Logo';
 import LocationButton from '@/app/ui/LocationButton';
 import LocationMenu from '@/app/components/LocationMenu';
 import ProfileButton from '@/app/ui/ProfileButton';
+import ProfileMenu from '@/app/components/ProfileMenu';
 import { useState } from 'react';
 
 function Header() {
@@ -19,6 +20,7 @@ function Header() {
       <LocationButton toggleLocationMenu={toggleLocationMenu} />
       {showLocationMenu && <LocationMenu toggleLocationMenu={toggleLocationMenu} />}
       <ProfileButton />
+      {/* <ProfileMenu /> */}
     </header>
   );
 };

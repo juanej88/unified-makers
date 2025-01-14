@@ -34,6 +34,14 @@ body {
     @apply rounded-md hover:text-foreground transition-colors hover:bg-gray-500/10 active:bg-gray-500/15;
   }
 
+  .modal {
+    @apply fixed left-0 2xl:left-auto top-12 w-full max-w-screen-2xl h-full flex p-4;
+  }
+
+  .menu {
+    @apply p-1 w-full max-w-72 h-fit max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin transition-transform animate-scaleUp origin-top;
+  }
+
   .grid-location-option {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5rem);
   }

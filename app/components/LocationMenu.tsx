@@ -55,8 +55,8 @@ function LocationMenu({ toggleLocationMenu }: { toggleLocationMenu: () => void }
   };
   
   return (
-    <section className='fixed left-0 top-12 w-full h-full flex justify-center'>
-      <article id='location-menu' className='mt-4 p-1 w-full max-w-72 h-fit max-h-96 bg-background rounded-md shadow overflow-auto scrollbar-thin transition-transform animate-scaleUp origin-top'>
+    <section className='modal justify-center'>
+      <article id='location-menu' className='menu'>
         {getLocations()}
       </article>
     </section>
