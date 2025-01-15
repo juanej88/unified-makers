@@ -1,11 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Check } from 'lucide-react';
 import { getLocationsData } from '@/app/lib/staticData';
 import { useCity, useCityDispatch } from '@/app/providers/cityProvider';
-import { useEffect } from 'react';
+import { menu } from '@/app/lib/definitions';
 
-function LocationMenu({ toggleLocationMenu }: { toggleLocationMenu: () => void }) {
+function LocationMenu({ toggleMenu }: {toggleMenu: (menu: menu) => void}) {
   const selectedCity = useCity();
   const dispatchCity = useCityDispatch();
 
@@ -14,7 +15,7 @@ function LocationMenu({ toggleLocationMenu }: { toggleLocationMenu: () => void }
     const checkClick = (event: MouseEvent) => {
       const clickedElement = event.target as HTMLElement;
       const parentElement = clickedElement.closest('#location-menu');
-      if (!parentElement) toggleLocationMenu();
+      if (!parentElement) toggleMenu('location');
     };
     document.addEventListener('click', checkClick);
     return () => {
@@ -28,7 +29,7 @@ function LocationMenu({ toggleLocationMenu }: { toggleLocationMenu: () => void }
       type: 'changed',
       city: event.currentTarget.id,
     });
-    toggleLocationMenu();
+    toggleMenu('location');
   };
 
   const getCities = (cities: string[]) => {
