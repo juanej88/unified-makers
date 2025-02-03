@@ -19,16 +19,25 @@ Unified Makers is being developed in phases to deliver an intuitive and powerful
 
 Let’s make event planning simple, stress-free, and even a little fun!
 
-## Tech Stack 🛠️  
+## Tech Stack 🛠️
 
-- **Frontend**: JavaScript, TypeScript, React, Next.js, TailwindCSS  
-- **Backend**: C#, .NET, PostgreSQL  
+- **Frontend**: JavaScript, TypeScript, React, Next.js, TailwindCSS
+- **Backend**: C#, .NET, PostgreSQL
 - **Infrastructure**: Docker, GitHub Actions for CI/CD  
-- **Hosting**: (To be determined during development)  
+- **Hosting**: (To be determined during development)
 
 ## Project Status 📌
 
-**Currently in Development** 🚧 – Phase 1: **Search & Find Professionals**  
-- Implementing vendor search and filtering system  
-- Setting up backend API endpoints  
-- Designing and refining the UI for a seamless user experience  
+**Currently in Development** 🚧 – Phase 1: **Search & Find Professionals**
+- Implementing vendor search and filtering system
+- Setting up backend API endpoints
+- Designing and refining the UI for a seamless user experience
+
+## Contact 📬
+
+Have questions, feedback, or want to collaborate? Reach out!
+
+- **GitHub**: [@juanej88](https://github.com/juanej88)
+- **LinkedIn**: [Juan Espinosa](https://linkedin.com/in/juanespinosajorrin)
+- **Portfolio**: [juanespinosa.net](https://juanespinosa.net)
+- **Email**: [dev.juanespinosa@gmail.com](mailto:dev.juanespinosa@gmail.com)
