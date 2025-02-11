@@ -1,13 +1,11 @@
 import { getCategoryData } from '../lib/staticData';
 
 function CategoryMenu() {
-
-  
   const getCategories = () => {
     const categories = getCategoryData();
     return categories.map(({icon: Icon, label}) => {
       return (
-        <article key={label} className='flex-center flex-col p-2 cursor-pointer'>
+        <article key={label} className='flex-center flex-col flex-none w-max p-2 cursor-pointer'>
           <Icon size={24} strokeWidth={1.5} className='text-secondary' />
           <p className='text-xs text-secondary font-medium pt-1'>
             {label}
@@ -18,7 +16,7 @@ function CategoryMenu() {
   };
 
   return (
-    <section className='flex-center'>
+    <section className='flex w-full overflow-x-auto scrollbar-none'>
       {getCategories()}
     </section>
   );
