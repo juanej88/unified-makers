@@ -9,7 +9,7 @@ function LocationButton({ toggleMenu }: { toggleMenu: (menu: menu) => void }) {
   return (
     <section className='flex-center'>
       <button id='location-btn' onClick={() => toggleMenu('location')} className='flex-center primary-btn px-3 py-1 text-secondary'>
-        <p className='text-lg truncate max-w-40'>
+        <p className='truncate max-w-40 pt-[2px]'>
           {city ? city : 'Select Location'}
         </p>
       </button>
