@@ -21,7 +21,7 @@ function Header() {
   };
   
   return (
-    <header className='fixed w-full max-w-screen-2xl h-12 grid grid-cols-3 px-4 border-b-[1px] z-10 bg-background'>
+    <header className='fixed w-full max-w-screen-2xl h-12 grid grid-cols-3 px-4 shadow-sm z-10 bg-background'>
       <Logo />
       <LocationButton toggleMenu={toggleMenu} />
       {showMenu.location && <LocationMenu toggleMenu={toggleMenu} />}

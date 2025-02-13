@@ -5,12 +5,12 @@ function CategoryMenu() {
     const categories = getCategoryData();
     return categories.map(({icon: Icon, label}) => {
       return (
-        <article key={label} className='flex-center flex-col flex-none w-max px-2 pt-[6px] pb-1 cursor-pointer text-secondary primary-btn'>
+        <button key={label} className='flex-center flex-col flex-none w-max px-2 pt-[6px] pb-1 cursor-pointer text-secondary primary-btn'>
           <Icon size={24} strokeWidth={1.5} />
           <p className='text-xs font-medium pt-1'>
             {label}
           </p>
-        </article>
+        </button>
       );
     });
   };
