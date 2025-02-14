@@ -1,7 +1,7 @@
 'use client';
 
 import Logo from '@/app/ui/Logo';
-import LocationButton from '@/app/ui/LocationButton';
+import LocationButton from '@/app/ui/SearchButton';
 import LocationMenu from '@/app/components/LocationMenu';
 import ProfileButton from '@/app/ui/ProfileButton';
 import ProfileMenu from '@/app/components/ProfileMenu';
